@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A clear operating guide for how Sagan Member Strategists and Talent Advisors work together.">
+  <meta property="og:title" content="Talent Advisor + Member Strategist | Sagan">
+  <meta property="og:description" content="One account. Two owners. Clear decisions from hiring request to placement.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#093A3E">
+  <title>Talent Advisor + Member Strategist | Sagan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f5f2ed;
+      --paper: #fffdf9;
+      --glacier: #093a3e;
+      --glacier-2: #0f5054;
+      --ink-soft: #536462;
+      --line: #d9d7d0;
+      --yellow: #f5b800;
+      --blue: #2197ff;
+      --blue-soft: #e8f4ff;
+      --yellow-soft: #fff4cf;
+      --green-soft: #e4f2ed;
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--glacier);
+      background: var(--cream);
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -80px;
+      z-index: 20;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--yellow);
+      color: var(--glacier);
+      font-weight: 700;
+    }
+
+    .skip-link:focus { top: 16px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(9, 58, 62, .14);
+      background: rgba(245, 242, 237, .96);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      width: min(calc(100% - 32px), var(--max));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      border: 3px solid var(--glacier);
+      border-radius: 50%;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a,
+    .print-button {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 14px;
+      color: var(--glacier);
+      background: transparent;
+      font: 600 14px/1 "Space Grotesk", sans-serif;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover,
+    .print-button:hover {
+      border-color: var(--glacier);
+      background: var(--paper);
+    }
+
+    main { overflow: hidden; }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 82px 0 66px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 20px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      color: var(--ink-soft);
+      font-family: "Fragment Mono", monospace;
+      font-size: 12px;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--yellow);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+
+    h1 {
+      max-width: 880px;
+      margin-bottom: 24px;
+      font-size: clamp(48px, 8vw, 94px);
+      font-weight: 800;
+    }
+
+    .hero-lede {
+      max-width: 770px;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: clamp(20px, 2.4vw, 29px);
+      line-height: 1.35;
+    }
+
+    .hero-lede strong { color: var(--glacier); }
+
+    .ownership-strip {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 54px;
+    }
+
+    .ownership-card {
+      min-height: 188px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .ownership-card.ms { border-top: 7px solid var(--yellow); }
+    .ownership-card.ta { border-top: 7px solid var(--blue); }
+
+    .ownership-card .number {
+      display: block;
+      margin-bottom: 20px;
+      font-family: "Fragment Mono", monospace;
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .ownership-card p {
+      margin: 0;
+      font-size: clamp(23px, 3vw, 34px);
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: -.03em;
+    }
+
+    .plus {
+      align-self: center;
+      font-family: "Fragment Mono", monospace;
+      font-size: 34px;
+      color: var(--ink-soft);
+    }
+
+    section { padding: 72px 0; }
+    section + section { border-top: 1px solid var(--line); }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--ink-soft);
+      font-family: "Fragment Mono", monospace;
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(36px, 5vw, 60px);
+    }
+
+    .section-head > p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 18px;
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .role-card {
+      position: relative;
+      min-height: 520px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .role-card::before {
+      content: "";
+      position: absolute;
+      top: 34px;
+      right: 34px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+    }
+
+    .role-card.ms::before { background: var(--yellow); }
+    .role-card.ta::before { background: var(--blue); }
+
+    .role-card h3 {
+      max-width: 390px;
+      margin-bottom: 16px;
+      font-size: clamp(29px, 4vw, 42px);
+    }
+
+    .role-purpose {
+      min-height: 80px;
+      margin: 0 0 28px;
+      color: var(--ink-soft);
+      font-size: 19px;
+    }
+
+    .owner-label {
+      display: block;
+      margin-bottom: 12px;
+      font-family: "Fragment Mono", monospace;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .clean-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .clean-list li {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 11px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .clean-list li::before {
+      content: "✓";
+      color: var(--glacier);
+      font-weight: 800;
+    }
+
+    .operating-rule {
+      margin-top: 20px;
+      padding: 28px;
+      border-radius: var(--radius);
+      color: var(--paper);
+      background: var(--glacier);
+    }
+
+    .operating-rule strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--yellow);
+      font-family: "Fragment Mono", monospace;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .operating-rule p {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(22px, 3vw, 32px);
+      line-height: 1.3;
+      letter-spacing: -.025em;
+    }
+
+    .process-list {
+      display: grid;
+      gap: 12px;
+      counter-reset: stage;
+    }
+
+    .process-row {
+      counter-increment: stage;
+      display: grid;
+      grid-template-columns: 66px minmax(170px, .75fr) minmax(220px, 1fr) minmax(220px, 1fr) minmax(230px, 1.35fr);
+      gap: 18px;
+      align-items: center;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+    }
+
+    .stage-number {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--paper);
+      background: var(--glacier);
+      font-family: "Fragment Mono", monospace;
+      font-size: 13px;
+    }
+
+    .stage-number::before {
+      content: counter(stage, decimal-leading-zero);
+    }
+
+    .process-row h3 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: -.025em;
+    }
+
+    .cell-label {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--ink-soft);
+      font-family: "Fragment Mono", monospace;
+      font-size: 10px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .process-row p { margin: 0; }
+
+    .owner-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .owner-pill.ms { background: var(--yellow-soft); }
+    .owner-pill.ta { background: var(--blue-soft); }
+    .owner-pill.shared { background: var(--green-soft); }
+
+    .owner-pill::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .matrix-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 19px 22px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    th {
+      color: var(--ink-soft);
+      font-family: "Fragment Mono", monospace;
+      font-size: 11px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    td:first-child { font-weight: 700; }
+
+    .decision {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .decision.ms { background: var(--yellow-soft); }
+    .decision.ta { background: var(--blue-soft); }
+    .decision.shared { background: var(--green-soft); }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .metric-card {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .metric-card h3 {
+      margin-bottom: 22px;
+      font-size: 24px;
+    }
+
+    .metric-card.ta { border-top: 7px solid var(--blue); }
+    .metric-card.ms { border-top: 7px solid var(--yellow); }
+    .metric-card.shared { border-top: 7px solid var(--glacier); }
+
+    .metric-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .metric-list li {
+      padding: 11px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .metric-list span {
+      display: block;
+      margin-top: 2px;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .failure-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .failure-card {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-left: 7px solid var(--yellow);
+      border-radius: 18px;
+      background: var(--paper);
+    }
+
+    .failure-card h3 {
+      margin-bottom: 8px;
+      font-size: 19px;
+      letter-spacing: -.02em;
+    }
+
+    .failure-card p {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+
+    .final-rule {
+      padding: 76px 0;
+      color: var(--paper);
+      background: var(--glacier);
+    }
+
+    .final-rule .kicker { color: #b8cdcb; }
+
+    .final-rule h2 {
+      max-width: 850px;
+      color: var(--paper);
+    }
+
+    .rule-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .rule {
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 18px;
+    }
+
+    .rule strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--yellow);
+      font-family: "Fragment Mono", monospace;
+      font-size: 28px;
+      font-weight: 400;
+    }
+
+    .rule p {
+      margin: 0;
+      color: #d8e4e2;
+      font-size: 17px;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,.16);
+      color: #b8cdcb;
+      background: var(--glacier);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 13px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 930px) {
+      .nav-links a { display: none; }
+      .ownership-strip { grid-template-columns: 1fr; }
+      .plus { display: none; }
+      .section-head { grid-template-columns: 1fr; gap: 18px; }
+      .role-grid,
+      .metrics-grid { grid-template-columns: 1fr; }
+      .role-card { min-height: auto; }
+      .role-purpose { min-height: auto; }
+
+      .process-row {
+        grid-template-columns: 52px 1fr 1fr;
+      }
+
+      .process-row h3 { grid-column: 2 / -1; }
+      .process-row .output { grid-column: 2 / -1; }
+      .rule-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .nav { min-height: 64px; }
+      .brand { font-size: 18px; }
+      .print-button { padding: 8px 11px; }
+      .hero { padding: 56px 0 48px; }
+      h1 { font-size: clamp(44px, 14vw, 64px); }
+      section { padding: 56px 0; }
+      .ownership-card,
+      .role-card,
+      .metric-card { padding: 24px; }
+
+      .process-row {
+        grid-template-columns: 46px 1fr;
+        padding: 19px;
+      }
+
+      .process-row h3,
+      .process-row .lead,
+      .process-row .partner,
+      .process-row .output { grid-column: 2; }
+
+      .failure-grid { grid-template-columns: 1fr; }
+      .footer-row { flex-direction: column; }
+    }
+
+    @media print {
+      .site-header,
+      .skip-link { display: none; }
+
+      body { background: white; }
+      .hero { padding-top: 30px; }
+      section { break-inside: avoid; }
+      .role-card,
+      .metric-card,
+      .failure-card,
+      .process-row { break-inside: avoid; }
+      .final-rule { color: var(--glacier); background: white; }
+      .final-rule h2 { color: var(--glacier); }
+      .final-rule .kicker,
+      .final-rule .rule p { color: var(--ink-soft); }
+      .rule { border-color: var(--line); }
+      footer { color: var(--ink-soft); background: white; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Sagan operating guide home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Sagan</span>
+      </a>
+      <div class="nav-links">
+        <a href="#roles">The roles</a>
+        <a href="#process">The process</a>
+        <a href="#decisions">Decision rights</a>
+        <button class="print-button" type="button" onclick="window.print()">Print / Save PDF</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div id="top" class="wrap hero">
+      <p class="eyebrow">Talent delivery operating guide</p>
+      <h1>One account. Two owners. Zero confusion.</h1>
+      <p class="hero-lede">
+        The <strong>Member Strategist owns the customer and the commercial outcome.</strong>
+        The <strong>Talent Advisor owns the search and candidate delivery.</strong>
+      </p>
+
+      <div class="ownership-strip" aria-label="Core ownership model">
+        <article class="ownership-card ms">
+          <span class="number">01 / COMMERCIAL OWNER</span>
+          <p>The Member Strategist owns the account.</p>
+        </article>
+        <span class="plus" aria-hidden="true">+</span>
+        <article class="ownership-card ta">
+          <span class="number">01 / DELIVERY OWNER</span>
+          <p>The Talent Advisor owns the hiring request.</p>
+        </article>
+      </div>
+    </div>
+
+    <section id="roles">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">01 / The roles</p>
+            <h2>Different ownership. One outcome.</h2>
+          </div>
+          <p>Both roles protect the customer experience. They do it from different seats.</p>
+        </div>
+
+        <div class="role-grid">
+          <article class="role-card ms">
+            <h3>Member Strategist</h3>
+            <p class="role-purpose">Owns the relationship, the account strategy, and the revenue result.</p>
+            <span class="owner-label">Accountabilities</span>
+            <ul class="clean-list">
+              <li>Understand the member’s business, priorities, and risks.</li>
+              <li>Set clear expectations with the customer.</li>
+              <li>Own client communication and strategic escalations.</li>
+              <li>Turn feedback into clear decisions for the delivery team.</li>
+              <li>Protect retention and identify expansion opportunities.</li>
+              <li>Own the commercial outcome from request through paid placement.</li>
+            </ul>
+          </article>
+
+          <article class="role-card ta">
+            <h3>Talent Advisor</h3>
+            <p class="role-purpose">Owns search execution, candidate quality, and the path to a successful hire.</p>
+            <span class="owner-label">Accountabilities</span>
+            <ul class="clean-list">
+              <li>Translate the role into a practical search strategy.</li>
+              <li>Find, assess, and recommend qualified candidates.</li>
+              <li>Keep the pipeline accurate, active, and moving.</li>
+              <li>Prepare candidates for every client interaction.</li>
+              <li>Coordinate interviews, feedback, and candidate follow-up.</li>
+              <li>Flag search risk early and propose a better delivery plan.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="operating-rule">
+          <strong>The operating rule</strong>
+          <p>The Strategist decides what the account needs. The Talent Advisor decides how to deliver the right talent.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">02 / The process</p>
+            <h2>Who leads at each stage.</h2>
+          </div>
+          <p>Lead means accountable for movement. Partner means responsible for the inputs that make the stage work.</p>
+        </div>
+
+        <div class="process-list">
+          <article class="process-row">
+            <span class="stage-number" aria-hidden="true"></span>
+            <h3>New hiring request</h3>
+            <p class="lead"><span class="cell-label">Lead</span><span class="owner-pill ms">Member Strategist</span></p>
+            <p class="partner"><span class="cell-label">Partner</span>Talent Advisor validates feasibility.</p>
+            <p class="output"><span class="cell-label">Output</span>A clear business need, priority, budget, and timeline.</p>
+          </article>
+
+          <article class="process-row">
+            <span class="stage-number" aria-hidden="true"></span>
+            <h3>Kickoff and calibration</h3>
+            <p class="lead"><span class="cell-label">Lead</span><span class="owner-pill shared">Shared</span></p>
+            <p class="partner"><span class="cell-label">Split</span>Strategist owns context. TA owns search calibration.</p>
+            <p class="output"><span class="cell-label">Output</span>An agreed scorecard, salary, schedule, and dealbreakers.</p>
+          </article>
+
+          <article class="process-row">
+            <span class="stage-number" aria-hidden="true"></span>
+            <h3>Search</h3>
+            <p class="lead"><span class="cell-label">Lead</span><span class="owner-pill ta">Talent Advisor</span></p>
+            <p class="partner"><span class="cell-label">Partner</span>Strategist removes account-level blockers.</p>
+            <p class="output"><span class="cell-label">Output</span>A qualified pipeline with evidence, not keyword matches.</p>
+          </article>
+
+          <article class="process-row">
+            <span class="stage-number" aria-hidden="true"></span>
+            <h3>Shortlist</h3>
+            <p class="lead"><span class="cell-label">Lead</span><span class="owner-pill ta">Talent Advisor</span></p>
+            <p class="partner"><span class="cell-label">Partner</span>Strategist frames the recommendation for the client.</p>
+            <p class="output"><span class="cell-label">Output</span>Strong candidates with clear reasons, risks, and resources.</p>
+          </article>
+
+          <article class="process-row">
+            <span class="stage-number" aria-hidden="true"></span>
+            <h3>Interviews</h3>
+            <p class="lead"><span class="cell-label">Lead</span><span class="owner-pill shared">Shared</span></p>
+            <p class="partner"><span class="cell-label">Split</span>TA prepares candidates. Strategist owns the client experience.</p>
+            <p class="output"><span class="cell-label">Output</span>Fast interviews, useful feedback, and a clear next decision.</p>
+          </article>
+
+          <article class="process-row">
+            <span class="stage-number" aria-hidden="true"></span>
+            <h3>Offer</h3>
+            <p class="lead"><span class="cell-label">Lead</span><span class="owner-pill ms">Member Strategist</span></p>
+            <p class="partner"><span class="cell-label">Partner</span>TA manages the candidate side and closes gaps.</p>
+            <p class="output"><span class="cell-label">Output</span>Aligned terms, an accepted offer, and a confirmed start plan.</p>
+          </article>
+
+          <article class="process-row">
+            <span class="stage-number" aria-hidden="true"></span>
+            <h3>Placement</h3>
+            <p class="lead"><span class="cell-label">Lead</span><span class="owner-pill shared">Shared</span></p>
+            <p class="partner"><span class="cell-label">Split</span>Strategist closes the account outcome. TA closes delivery.</p>
+            <p class="output"><span class="cell-label">Output</span>A paid placement, clean handoff, and protected first-hire success.</p>
+          </article>
+
+          <article class="process-row">
+            <span class="stage-number" aria-hidden="true"></span>
+            <h3>Retention and expansion</h3>
+            <p class="lead"><span class="cell-label">Lead</span><span class="owner-pill ms">Member Strategist</span></p>
+            <p class="partner"><span class="cell-label">Partner</span>TA brings delivery evidence and talent-market insight.</p>
+            <p class="output"><span class="cell-label">Output</span>A healthy hire, a stronger account, and the right next request.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="decisions">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">03 / Decision rights</p>
+            <h2>Who decides what.</h2>
+          </div>
+          <p>When ownership is unclear, speed drops. Use this table before a small question becomes a customer problem.</p>
+        </div>
+
+        <div class="matrix-wrap" role="region" aria-label="Decision rights table" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>Decision</th>
+                <th>Owner</th>
+                <th>Required input</th>
+                <th>What good looks like</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Customer priority and business outcome</td>
+                <td><span class="decision ms">Member Strategist</span></td>
+                <td>Member context and commercial reality</td>
+                <td>The team knows why this hire matters now.</td>
+              </tr>
+              <tr>
+                <td>Search strategy and sourcing plan</td>
+                <td><span class="decision ta">Talent Advisor</span></td>
+                <td>Agreed scorecard and market evidence</td>
+                <td>The plan targets the profile, not only the keywords.</td>
+              </tr>
+              <tr>
+                <td>Candidate recommendation</td>
+                <td><span class="decision ta">Talent Advisor</span></td>
+                <td>Assessment evidence and candidate intent</td>
+                <td>Every recommendation has proof and honest risks.</td>
+              </tr>
+              <tr>
+                <td>Client messaging and expectations</td>
+                <td><span class="decision ms">Member Strategist</span></td>
+                <td>Delivery status from the TA</td>
+                <td>The client hears one clear message and no surprises.</td>
+              </tr>
+              <tr>
+                <td>Scope, salary, or schedule change</td>
+                <td><span class="decision ms">Member Strategist</span></td>
+                <td>TA feasibility and market data</td>
+                <td>The change improves fill probability without breaking trust.</td>
+              </tr>
+              <tr>
+                <td>Hard-search recalibration</td>
+                <td><span class="decision shared">Shared</span></td>
+                <td>TA owns the new plan. Strategist owns the client conversation.</td>
+                <td>A dated decision replaces endless searching.</td>
+              </tr>
+              <tr>
+                <td>Candidate preparation</td>
+                <td><span class="decision ta">Talent Advisor</span></td>
+                <td>Role context and client expectations</td>
+                <td>The candidate understands the role and can show relevant proof.</td>
+              </tr>
+              <tr>
+                <td>Commercial concession or escalation</td>
+                <td><span class="decision ms">Member Strategist</span></td>
+                <td>Revenue impact and delivery facts</td>
+                <td>The decision protects the account and the business.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="metrics">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">04 / The scoreboard</p>
+            <h2>Measure the work that matters.</h2>
+          </div>
+          <p>Activity is useful. Outcomes are better. Each role needs a small scoreboard tied to customer and revenue results.</p>
+        </div>
+
+        <div class="metrics-grid">
+          <article class="metric-card ms">
+            <h3>Member Strategist</h3>
+            <ul class="metric-list">
+              <li>Account health<span>Risk, confidence, and next action are current.</span></li>
+              <li>Client feedback speed<span>Feedback reaches delivery while it is still useful.</span></li>
+              <li>Placed revenue<span>Only paid or placed hires count as closed.</span></li>
+              <li>Retention and expansion<span>The account stays healthy and grows for the right reasons.</span></li>
+            </ul>
+          </article>
+
+          <article class="metric-card ta">
+            <h3>Talent Advisor</h3>
+            <ul class="metric-list">
+              <li>Time to qualified shortlist<span>Speed without lowering the bar.</span></li>
+              <li>Qualified candidate rate<span>Presented candidates meet the agreed scorecard.</span></li>
+              <li>Interview conversion<span>Shortlists turn into real client interest.</span></li>
+              <li>Candidate readiness<span>Every candidate is current, prepared, and intentional.</span></li>
+            </ul>
+          </article>
+
+          <article class="metric-card shared">
+            <h3>Shared result</h3>
+            <ul class="metric-list">
+              <li>Time to fill<span>The full process moves with purpose.</span></li>
+              <li>First Hire Success<span>The hire works after the offer is signed.</span></li>
+              <li>Rework rate<span>Fewer restarts, replacements, and avoidable misses.</span></li>
+              <li>Customer confidence<span>The member trusts the people and the process.</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="breakdowns">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">05 / Failure modes</p>
+            <h2>When the model breaks.</h2>
+          </div>
+          <p>Most delivery problems start as small ownership gaps. Fix them while they are still cheap.</p>
+        </div>
+
+        <div class="failure-grid">
+          <article class="failure-card">
+            <h3>No one owns the next action.</h3>
+            <p>Fix it with one owner, one action, and one due date.</p>
+          </article>
+          <article class="failure-card">
+            <h3>The client promise ignores the market.</h3>
+            <p>The Strategist must use the TA’s feasibility evidence before making a commitment.</p>
+          </article>
+          <article class="failure-card">
+            <h3>The search continues without learning.</h3>
+            <p>The TA must bring a new plan. The Strategist must secure a client decision.</p>
+          </article>
+          <article class="failure-card">
+            <h3>A candidate enters the interview unprepared.</h3>
+            <p>The TA owns readiness. The Strategist supplies the customer context that matters.</p>
+          </article>
+          <article class="failure-card">
+            <h3>Feedback sits in a message thread.</h3>
+            <p>The Strategist converts client feedback into a clear decision. The TA acts on it.</p>
+          </article>
+          <article class="failure-card">
+            <h3>An invoice is treated as a placement.</h3>
+            <p>Invoiced means invoiced. The process closes when the hire is paid or placed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-rule" aria-labelledby="final-heading">
+      <div class="wrap">
+        <p class="kicker">The standard</p>
+        <h2 id="final-heading">Every open process needs three things.</h2>
+        <div class="rule-grid">
+          <article class="rule">
+            <strong>01</strong>
+            <p>One clear next action.</p>
+          </article>
+          <article class="rule">
+            <strong>02</strong>
+            <p>One named owner.</p>
+          </article>
+          <article class="rule">
+            <strong>03</strong>
+            <p>One real due date.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>Sagan Talent Delivery Operating Guide</span>
+      <span>Use during onboarding, kickoffs, weekly reviews, and escalations.</span>
+    </div>
+  </footer>
+</body>
+</html>
